@@ -16,10 +16,7 @@ In the terminal located in the folder where you want to save this project, execu
 ```
 git clone https://github.com/Dimaps716/calculate_dev
 ```
-move to developer branch.
-```
-git checkout developer
-```
+
 ### run project dependencies.
 _create a virtual environment in my case I use the python one_
 
