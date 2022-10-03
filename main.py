@@ -1,10 +1,9 @@
-# This is a sample Python script.
 from fastapi import FastAPI
 from pydantic import BaseModel
-from calculate import calculate
+from src.calculate import calculate
 
 
-class User_input(BaseModel):
+class User_Input(BaseModel):
 	operation: str
 	x: float
 	y: float
@@ -15,6 +14,13 @@ app = FastAPI()
 
 
 @app.post("/calculate")
-def operate(input: User_input):
-	return calculate(input.operation, input.x, input.y)
+def operate(input_user: User_Input):
+	"""
+	`operate` takes a `User_input` object and returns the result of `calculate` with the `operation`, `x`, and `y`
+	attributes of the `User_input` object
+	**param** input: User_input
+	**type** input: User_input
+	**return** The result of the calculation.
+	"""
+	return calculate(input_user.operation, input_user.x, input_user.y)
 
